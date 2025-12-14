@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcão Nexus | Tecnologia Corporativa</title>
+    <meta name="description" content="Soluções de software, infraestrutura de dados e consultoria técnica.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#0B0F19',      // Fundo principal (quase preto)
+                            surface: '#111827', // Cartões
+                            border: '#1F2937',  // Bordas
+                            input: '#030712'    // Inputs
+                        },
+                        brand: {
+                            blue: '#3b82f6',    // Azul neon
+                            cyan: '#06b6d4',    // Ciano neon
+                            purple: '#8b5cf6'   // Roxo neon
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.15)',
+                        'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.15)'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563;
+        }
+
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #111827, #0f1522);
+        }
+        
+        .card-hover:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Animação do Logo */
+        .logo-mark {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .logo-mark {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 bg-dark-bg antialiased selection:bg-brand-cyan selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo Nova (Dark Mode Version) -->
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <!-- Ícone Gráfico (SVG) -->
+                    <div class="relative w-11 h-11 logo-mark">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+                            <!-- Asa Esquerda (Branco no Dark Mode) -->
+                            <path d="M20 4L4 18L14 36H26L20 4Z" fill="#ffffff" class="opacity-90"/>
+                            <!-- Asa Direita (Azul Neon) -->
+                            <path d="M20 4L36 18L24 28L14 18L20 4Z" fill="#3b82f6"/>
+                            <!-- Detalhe (Ciano Neon) -->
+                            <path d="M24 28L14 36H26L36 18L24 28Z" fill="#06b6d4"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Tipografia -->
+                    <div class="leading-tight">
+                        <span class="block font-extrabold text-white tracking-tight text-xl">FALCÃO NEXUS</span>
+                        <span class="block text-[10px] text-brand-cyan font-bold tracking-[0.2em] uppercase glow-text">Tecnologia</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#solucoes" class="text-sm font-medium text-slate-400 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all">Soluções</a>
+                    <a href="#produtos" class="text-sm font-medium text-slate-400 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all">Produtos</a>
+                    <a href="#empresa" class="text-sm font-medium text-slate-400 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all">A Empresa</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contato" class="bg-white text-dark-bg px-6 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:bg-brand-cyan hover:text-black transform hover:-translate-y-0.5 text-sm">
+                        Falar com Consultor
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <button class="md:hidden text-2xl text-white p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-brand-blue/10 to-transparent blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-purple/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-brand-cyan/20 bg-brand-cyan/5 text-brand-cyan text-xs font-bold uppercase tracking-wider mb-8 shadow-glow-cyan backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse mr-2"></span>
+                        Inovação & Performance
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
+                        Tecnologia que <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-cyan to-white drop-shadow-lg">Transforma</span> Negócios.
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-10 leading-relaxed border-l-2 border-brand-blue/30 pl-6">
+                        Especialistas em desenvolvimento de software e infraestrutura de dados. Simplificamos a complexidade tecnológica para que sua empresa foque no crescimento.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="#solucoes" class="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-brand-blue to-brand-cyan text-black font-bold rounded-lg hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all">
+                            Ver Soluções
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#produtos" class="flex items-center justify-center px-8 py-4 bg-transparent border border-white/10 text-white rounded-lg font-bold hover:bg-white/5 hover:border-brand-cyan hover:text-brand-cyan transition-all">
+                            Nossos Produtos
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 flex items-center gap-6 text-sm font-semibold text-slate-500">
+                        <span class="flex items-center group"><i class="fas fa-check-circle text-brand-blue mr-2 group-hover:text-brand-cyan transition-colors"></i> CNPJ Verificado</span>
+                        <span class="flex items-center group"><i class="fas fa-check-circle text-brand-blue mr-2 group-hover:text-brand-cyan transition-colors"></i> Inova Simples</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="solucoes" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/5 pb-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand-cyan font-bold tracking-widest uppercase text-xs mb-3">Ecossistema de Serviços</h2>
+                    <p class="text-3xl md:text-4xl font-bold text-white">
+                        Do código à infraestrutura
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-slate-500 text-sm max-w-xs text-right hidden md:block">
+                        Escalabilidade e estabilidade garantidas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-brand-blue/10"></div>
+                    <div class="w-12 h-12 bg-dark-bg border border-white/10 rounded-xl flex items-center justify-center mb-6 text-brand-blue group-hover:scale-110 transition-transform">
+                        <i class="fas fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Softwares Prontos (SaaS)</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Licenciamento de soluções robustas para gestão, produtividade e automação, prontas para uso imediato.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-purple-500/5 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-brand-purple/10"></div>
+                    <div class="w-12 h-12 bg-dark-bg border border-white/10 rounded-xl flex items-center justify-center mb-6 text-brand-purple group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Dev Customizado</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Fábrica de software para criar sistemas sob medida, alinhados exatamente às regras do seu negócio.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand-cyan/5 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-brand-cyan/10"></div>
+                    <div class="w-12 h-12 bg-dark-bg border border-white/10 rounded-xl flex items-center justify-center mb-6 text-brand-cyan group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Infraestrutura & Dados</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Serviços de hospedagem segura, tratamento de dados e provedoria de aplicações na nuvem.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-white/5 transition-all duration-300 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-500/5 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-green-500/10"></div>
+                    <div class="w-12 h-12 bg-dark-bg border border-white/10 rounded-xl flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-life-ring text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Suporte Especializado</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Consultoria técnica continuada e manutenção evolutiva para garantir que sua operação nunca pare.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPRIETARY PORTFOLIO SECTION -->
+    <section id="produtos" class="py-24 bg-[#080b14] relative overflow-hidden">
+        <!-- Grid Background -->
+        <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#1f2937 1px, transparent 1px), linear-gradient(to right, #1f2937 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-brand-cyan font-bold tracking-widest uppercase text-xs mb-3 block">Inovação Própria</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Portfólio Proprietário</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Plataformas exclusivas unindo IA e sustentabilidade.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Product 1: IA Gastronomia (Dark Version) -->
+                <div class="group relative bg-dark-surface rounded-3xl p-8 lg:p-12 border border-white/5 hover:border-green-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-green-500/10 transition-colors"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-dark-bg border border-green-500/30 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                                🥑
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-2xl text-white tracking-tight">
+                                    IA <span class="text-green-500">Gastronomia</span>
+                                </h3>
+                                <p class="text-xs font-bold text-green-500 uppercase tracking-wider">Food Service AI</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                            Revolucione a gestão do seu restaurante com IA especializada. Otimização de cardápios, previsão de demanda e gestão inteligente.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                            <div class="flex items-center text-slate-400 text-sm bg-dark-bg p-2 rounded border border-white/5">
+                                <i class="fas fa-chart-line text-green-500 mr-2"></i> Lucratividade
+                            </div>
+                            <div class="flex items-center text-slate-400 text-sm bg-dark-bg p-2 rounded border border-white/5">
+                                <i class="fas fa-leaf text-green-500 mr-2"></i> Zero Desperdício
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.iagastronomia.com.br" target="_blank" class="relative z-10 inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-green-500/40">
+                        Acessar Plataforma <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Product 2: Nexus ESG 360 (Dark Version) -->
+                <div class="group relative bg-dark-surface rounded-3xl p-8 lg:p-12 border border-white/5 hover:border-brand-cyan/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/5 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-brand-cyan/10 transition-colors"></div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg border border-white/10">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-2xl text-white tracking-tight">
+                                    Nexus <span class="text-brand-cyan">ESG 360</span>
+                                </h3>
+                                <p class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Deep Tech Management</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                            Solução Deep Tech completa para governança corporativa. Monitoramento 360º para empresas que miram o futuro sustentável.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                            <div class="flex items-center text-slate-400 text-sm bg-dark-bg p-2 rounded border border-white/5">
+                                <i class="fas fa-file-contract text-brand-cyan mr-2"></i> Compliance
+                            </div>
+                            <div class="flex items-center text-slate-400 text-sm bg-dark-bg p-2 rounded border border-white/5">
+                                <i class="fas fa-chart-pie text-brand-cyan mr-2"></i> Deep Analytics
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://nexusesg360.app" target="_blank" class="relative z-10 inline-flex
