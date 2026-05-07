@@ -88,17 +88,7 @@
             transform: scale(1.1) rotate(5deg);
         }
 
-        /* Marquee Animation */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
+
     </style>
 </head>
 <body class="font-sans text-slate-300 bg-dark-bg antialiased selection:bg-brand-cyan selection:text-black">
@@ -275,127 +265,142 @@
         <!-- Grid Background -->
         <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#1f2937 1px, transparent 1px), linear-gradient(to right, #1f2937 1px, transparent 1px); background-size: 40px 40px;"></div>
 
+        <!-- Decorative Glows -->
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-brand-cyan font-bold tracking-widest uppercase text-xs mb-3 block">Inovação Própria</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Portfólio Proprietário</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-                    Plataformas exclusivas desenvolvidas pela Falcão Nexus.
+            <div class="text-center mb-20">
+                <span class="text-brand-cyan font-bold tracking-widest uppercase text-xs mb-3 block opacity-0 animate-[fadeIn_1s_ease-out_forwards]">Inovação Própria</span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight opacity-0 animate-[slideUp_1s_ease-out_0.2s_forwards]">Portfólio Proprietário</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto opacity-0 animate-[slideUp_1s_ease-out_0.4s_forwards]">
+                    Plataformas exclusivas e escaláveis desenvolvidas pela Falcão Nexus para transformar diferentes setores do mercado.
                 </p>
             </div>
 
-            <!-- Marquee Container -->
-            <div class="relative w-full overflow-hidden py-10">
-                <!-- Gradients for fade effect on edges -->
-                <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#080b14] to-transparent z-20 pointer-events-none"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#080b14] to-transparent z-20 pointer-events-none"></div>
+            <div class="grid lg:grid-cols-2 gap-10">
 
-                <div class="flex animate-marquee w-max">
-                    <!-- Set 1 -->
-                    <div class="flex items-center">
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
+                <!-- Card IA Gastronomia -->
+                <div class="group relative bg-[#0B0F19]/80 backdrop-blur-xl border border-white/5 hover:border-green-500/30 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,197,94,0.15)] overflow-hidden">
+                    <!-- Hover Effect Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-500/0 via-transparent to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <!-- Header Card -->
+                        <div class="flex justify-between items-start mb-8">
+                            <!-- Logo IA Gastronomia (Tipográfica com Emoji) -->
+                            <div class="flex items-center text-2xl font-bold text-white tracking-tight">
+                                <span class="mr-3 text-3xl">🥑</span>
+                                IA Gastronomia
                             </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full border border-green-500/20">SaaS</span>
+                                <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-semibold rounded-full border border-white/10">B2C / B2B</span>
+                            </div>
+                        </div>
 
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
+                        <!-- Content -->
+                        <div class="mb-8 flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">A Revolução na Criação Culinária</h3>
+                            <p class="text-slate-400 leading-relaxed">
+                                Crie receitas únicas, fichas técnicas profissionais e cardápios inovadores em segundos. O assistente de Inteligência Artificial definitivo para chefs, nutricionistas e amantes da boa comida.
+                            </p>
 
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-green-500 mr-3"></i> Geração instantânea de Receitas e Fichas Técnicas
+                                </li>
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-green-500 mr-3"></i> Otimização de custos para restaurantes
+                                </li>
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-green-500 mr-3"></i> Análise de tendências gastronômicas globais
+                                </li>
+                            </ul>
+                        </div>
 
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
-
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
-                    </div>
-
-                    <!-- Set 2 (Duplicate) -->
-                    <div class="flex items-center">
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
-
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
-
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
-
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
-
-                        <!-- Item 1: IA Gastronomia -->
-                        <a href="https://www.iagastronomia.com.br" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-green-500/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-dark-bg border border-green-500/30 rounded-lg flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">IA <span class="text-green-500">Gastronomia</span></span>
-                        </a>
-
-                        <!-- Item 2: Nexus ESG 360 -->
-                        <a href="https://nexusesg360.app" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-brand-cyan/50 hover:bg-white/5 transition-all group mx-4 min-w-[240px]">
-                            <div class="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center text-white text-base shadow-lg border border-white/10 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <span class="font-bold text-white text-lg tracking-tight">Nexus <span class="text-brand-cyan">ESG 360</span></span>
-                        </a>
+                        <!-- Action -->
+                        <div class="mt-auto pt-6 border-t border-white/5">
+                            <a href="https://www.iagastronomia.com.br" target="_blank" class="inline-flex items-center text-green-400 font-semibold group-hover:text-green-300 transition-colors">
+                                Conhecer Plataforma
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Card Nexus ESG 360 -->
+                <div class="group relative bg-[#0B0F19]/80 backdrop-blur-xl border border-white/5 hover:border-emerald-500/30 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)] overflow-hidden">
+                    <!-- Hover Effect Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    <div class="relative z-10 flex flex-col h-full">
+                        <!-- Header Card -->
+                        <div class="flex justify-between items-start mb-8">
+                            <!-- Logo Nexus ESG 360 (React adaptada para HTML/Tailwind) -->
+                            <div class="flex items-center gap-3">
+                                <div class="bg-gradient-to-br from-emerald-500 to-blue-600 p-2.5 rounded-xl shadow-lg">
+                                    <!-- Usando SVG equivalente ao Lucide Leaf -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                                    </svg>
+                                </div>
+                                <span class="font-bold text-2xl tracking-tight text-white">
+                                    Nexus<span class="text-emerald-500 font-light ml-1">ESG</span>
+                                </span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-semibold rounded-full border border-emerald-500/20">Enterprise</span>
+                                <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-semibold rounded-full border border-white/10">B2B / FinOps</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="mb-8 flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Infraestrutura Fiduciária ESG</h3>
+                            <p class="text-slate-400 leading-relaxed">
+                                O Sistema Operacional de GRC & ESG Banking-Grade. Converta dados operacionais em impacto direto no seu Fluxo de Caixa e garanta conformidade CVM 193 / IFRS S2.
+                            </p>
+
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-emerald-500 mr-3"></i> Digital Product Passport & Audit Vault™
+                                </li>
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-emerald-500 mr-3"></i> Cálculo inteligente de Escopos 1, 2 e 3
+                                </li>
+                                <li class="flex items-center text-sm text-slate-300">
+                                    <i class="fas fa-check text-emerald-500 mr-3"></i> Gestão de Riscos Climáticos (COSO® ERM)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Action -->
+                        <div class="mt-auto pt-6 border-t border-white/5">
+                            <a href="https://nexusesg360.app" target="_blank" class="inline-flex items-center text-emerald-400 font-semibold group-hover:text-emerald-300 transition-colors">
+                                Conhecer Plataforma
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Keyframes for Custom Animations -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 
     <!-- Contact Section -->
     <section id="contato" class="py-24 relative">
