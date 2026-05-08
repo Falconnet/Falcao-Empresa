@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const falconContainer = document.getElementById('falcon-hero-container');
-    const falconBody = document.getElementById('falcon-body');
-    const wingLeft = document.getElementById('falcon-wing-left');
-    const wingRight = document.getElementById('falcon-wing-right');
     const animatedFalcon = document.getElementById('animated-falcon');
 
     if (!falconContainer || !animatedFalcon) return;
@@ -31,11 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Gentle float and rotation based on scroll
         targetY = scrollY * -0.5;
         targetRotation = scrollY * 0.02;
-
-        // Flapping wings effect
-        const wingAngle = Math.max(-30, Math.min(20, Math.sin(scrollY * 0.05) * 20));
-        wingLeft.style.transform = `rotate(${wingAngle}deg)`;
-        wingRight.style.transform = `rotate(${-wingAngle}deg)`;
 
         // Dynamic Glow
         const glowIntensity = Math.min(0.8, 0.3 + (scrollY * 0.001));

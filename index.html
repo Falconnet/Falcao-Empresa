@@ -177,37 +177,9 @@
                 </div>
 
                 <!-- Interactive Falcon Hero Graphic -->
-                <div id="falcon-hero-container" class="relative w-full aspect-square flex justify-center items-center pointer-events-none">
-                    <div class="w-[120%] md:w-[150%] max-w-[800px]">
-                        <svg id="animated-falcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none" class="w-full h-full drop-shadow-[0_0_50px_rgba(59,130,246,0.3)]">
-                          <defs>
-                            <linearGradient id="falcon-grad" x1="0" y1="0" x2="500" y2="500">
-                              <stop offset="0%" stop-color="#3b82f6" />
-                              <stop offset="50%" stop-color="#06b6d4" />
-                              <stop offset="100%" stop-color="#8b5cf6" />
-                            </linearGradient>
-                            <filter id="glow">
-                              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                              <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                              </feMerge>
-                            </filter>
-                          </defs>
-                          <g id="falcon-body" filter="url(#glow)">
-                            <path d="M250 50 L280 150 L250 450 L220 150 Z" fill="url(#falcon-grad)" opacity="0.9"/>
-                            <path d="M250 20 L270 60 L250 80 L230 60 Z" fill="#ffffff" />
-                            <path d="M230 350 L250 480 L270 350 Z" fill="#3b82f6" opacity="0.6"/>
-                          </g>
-                          <g id="falcon-wing-left" transform-origin="230 150" filter="url(#glow)">
-                            <path d="M230 150 Q100 50 20 150 Q100 250 200 300 Z" fill="url(#falcon-grad)" opacity="0.8"/>
-                            <path d="M200 170 L50 170 M180 210 L80 230 M190 260 L120 280" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3"/>
-                          </g>
-                          <g id="falcon-wing-right" transform-origin="270 150" filter="url(#glow)">
-                            <path d="M270 150 Q400 50 480 150 Q400 250 300 300 Z" fill="url(#falcon-grad)" opacity="0.8"/>
-                            <path d="M300 170 L450 170 M320 210 L420 230 M310 260 L380 280" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3"/>
-                          </g>
-                        </svg>
+                <div id="falcon-hero-container" class="relative w-full aspect-square flex justify-center items-center pointer-events-none opacity-90">
+                    <div class="w-[120%] md:w-[150%] max-w-[800px] flex items-center justify-center">
+                        <img id="animated-falcon" src="assets/images/falcon-3d.png" alt="Falcão 3D" class="w-[130%] h-auto object-contain drop-shadow-[0_0_50px_rgba(59,130,246,0.6)] transition-transform duration-700 ml-10">
                     </div>
                 </div>
             </div>
